@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le Royal Hotel</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/slick.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <script type="text/javascript" src="dist/demo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    
+</head>
+    
+<body>  
+<header class="tm-header">
+    <img class="tm-logo" src="images/LaRoyale.png" alt="La Royale Hotel Logo">
+    
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav class="tm-nav">
+        <div id="main-nav-links"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="https://maps.app.goo.gl/KHP4cSev8gACutn67">Location</a></li>
+                <li><a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view">Price List</a></li>
+                </ul>    
+        </div>
+    </nav>
+</header>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('main-nav-links').querySelector('ul');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+    });
+</script> 
+   <section class="tm-imgslider">
+    <div class="slider single">
+        <div>
+            <div class="tm-slider">
+                <img class="tm-sliderimage" src="images/1.jpg" alt="Hotel Interior View">
+            </div>
+        </div>
+        <div>
+            <div class="tm-slider">
+                <img class="tm-sliderimage" src="images/2.jpg" alt="Hotel Spa and Swimming Pool">
+            </div>
+        </div>
+        <div>
+            <div class="tm-slider">
+                <img class="tm-sliderimage" src="images/3.jpg" alt="Luxurious Hotel Room">
+            </div>
+        </div>
+        <div>
+            <div class="tm-slider">
+                <img class="tm-sliderimage" src="images/4.jpg" alt="Beach View from Hotel Room">
+            </div>
+        </div>
+    </div>
+    <button class="slider-button left" aria-label="Previous slide"></button>
+    <button class="slider-button right" aria-label="Next slide"></button>
+    </section>
+    <div >
+        <h2 class="tm-roomtitle" align="center">Our Beaches</h2>
+    </div>
+    <section class="tm-roomsection">
+        
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p></p>
+                <p>Private Beach</p>
+                <p>Free Access</p>
+                <a href="https://maps.app.goo.gl/v5jTDdPbTJAAKFNp9" class="bold" target="_blank">Location</a>
+            </div>
+            <img class="tm-roomimage" src="images/ocean.jpg" alt="Ocean Beach">
+            <p>Ocean Blue Beach</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>Private Beach</p>
+                <p>Free Access</p>
+                <p>Only For Ladies</p>
+                <a href="https://maps.app.goo.gl/wBjogFG5Vutc12kR8" class="bold" target="_blank">Location</a>
+            </div>
+            <img class="tm-roomimage" src="images/LaFemme.jpg" alt="Deluxe Suite">
+            <p>La Femme Beach</p>
+        </div>
+    </section>
+    
+    <section class="tm-rooms-cta">
+        <div class="tm-rooms-cta-content">
+            <h2 class="tm-rooms-cta-title">Experience Luxury and Comfort</h2>
+            <a href="rooms.html" class="tm-button tm-button-primary">Check Our Rooms</a>
+        </div>
+    </section>
+    <section class="tm-servicesection">
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/wi-fi.png" alt="Wifi Icon">
+            <div>
+                <p class="b">Free Wifi</p>
+                <p>Enjoy free high-speed internet throughout the hotel</p>
+            </div>
+        </div>
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/restaurant.png" alt="Food Icon">
+            <div>
+                <p class="b">Inhouse Restaurant</p>
+                <p>Enjoy delicious food at our inhouse restaurant</p>
+            </div>
+        </div>
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/bell.png" alt="Bell Icon">
+            <div>
+                <p class="b">Room Service</p>
+                <p>Enjoy your stay with excellent and timely room service</p>
+            </div>
+        </div>
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/coffee.png" alt="Coffee Cup Icon">
+            <div>
+                <p class="b">Free Breakfast</p>
+                <p>Enjoy Free breakfast every morning</p>
+            </div>
+        </div>
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/car-front.png" alt="Car Icon">
+            <div>
+                <p class="b">Free Parking</p>
+                <p>No need to pay any extra charges to park your vehicle</p>
+            </div>
+        </div>
+        <div class="tm-service">
+            <img class="tm-serimage" src="images/spa.png" alt="Spa Icon">
+            <div>
+                <p class="b">Spa</p>
+                <p>Relax at the inhouse Spa once every day of your stay</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <footer class="tm-footer">
+    
+        <div class="tm-us">
+            <p class="bold">About Us</p>
+            <p>Welcome to Le Royal Hotel, 
+a top-rated 4-star hotel in Marina 5, Zone 24. We're perfectly located near the New Alamein City, offering easy access to all services for a truly luxurious and convenient stay.
+
+Enjoy our beautiful outdoor pool overlooking the lake, free private parking, a lovely garden, plus our own bar and restaurant. 
+We provide free Wi-Fi in all areas. Many rooms have a private terrace, and every apartment comes with a kitchen equipped with a fridge, microwave, and kettle. 
+Our 24-hour front desk staff speak Arabic and English, always ready to help you.
+
+At Le Royal Hotel, we're here to ensure your comfort, elegance, and outstanding service.</p>    
+        </div>
+        <br/>
+        <div class="gmap_outer">
+        <div class="gmap_canvas">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.312817972416!2d28.9690589!3d30.849915799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145fed9c8026a17b%3A0x275899f970792855!2sLe%20Royal%20Hotel%20Marina!5e0!3m2!1sen!2seg!4v1749669177342!5m2!1sen!2seg" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="#top" class="tm-up"><img src="images/up.png" alt="Scroll to top"></a>
+    </footer>
+</body>
+</html>

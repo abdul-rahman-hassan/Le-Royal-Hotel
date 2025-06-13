@@ -1,0 +1,1290 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    /* Changed font to a more elegant serif for headings and a clean sans-serif for body */
+    font-family: 'Open Sans', sans-serif; /* Default body font */
+}
+
+/* Importing a new font for headings to add a touch of elegance */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap'); /* For headings */
+
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    line-height: 1.7; /* Increased line height for better readability */
+    color: #36454F; /* Charcoal gray for text for better readability on light backgrounds */
+    background-color: #F5F5DC; /* Soft sandy beige for a warm, coastal background */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent by default */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+/* --- Header --- */
+.tm-header {
+    position: relative; /* Add this line */
+    background: #0A304E;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tm-logo {
+    width: 180px; /* Adjusted size for prominence */
+    margin: 0;
+}
+
+.tm-nav {
+    max-width: 100%;
+    border: none; /* Removed border */
+    margin: 0;
+    background-color: transparent; /* No background for nav itself */
+}
+
+.tm-nav div {
+    display: block; /* Changed to block for full width on mobile */
+    padding: 0; /* Remove padding */
+    margin: 0px auto; /* Centered */
+}
+
+.tm-nav div ul {
+    list-style: none;
+    display: flex; /* Use flexbox for menu items */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center nav items */
+}
+
+.tm-nav div ul li {
+    display: inline-block; /* Keep inline-block for spacing */
+    margin: 0 15px; /* Added horizontal margin */
+}
+
+.tm-nav div ul li a {
+    font-size: 1.1em; /* Adjusted font size for clarity */
+    padding: 10px 15px; /* Padding for click area */
+    text-decoration: none;
+    color: #E0FFFF; /* Light cyan for links, contrasting with dark blue */
+    line-height: normal; /* Reset line-height */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition */
+    border-bottom: 2px solid transparent; /* Subtle underline effect */
+}
+
+.tm-nav div ul li a:hover {
+    color: #4BBFAD; /* Aqua/Teal for hover */
+    border-bottom: 2px solid #4BBFAD; /* Highlight on hover */
+}
+
+/* Removed .tm-list::after as it's not needed with the new design */
+
+
+/* --- Main Section Titles (Explore, Rooms, Booking, Contact) --- */
+.tm-main {
+    background-color: #E0EBF5; /* Light blue background for page headers */
+    padding: 60px 20px; /* Ample padding */
+    text-align: center;
+    margin-bottom: 40px; /* Space below the title section */
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.tm-main p {
+    font-family: 'Lora', serif; /* New heading font */
+    font-size: 3.5em; /* Larger, more impactful heading */
+    color: #0A304E; /* Deep sea blue for headings */
+    font-weight: 700;
+    letter-spacing: 2px; /* Slightly increased letter spacing */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+
+/* --- Image Slider (Homepage) --- */
+.tm-imgslider {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.tm-slider {
+    position: relative;
+    overflow: hidden; /* Ensure text stays within bounds */
+}
+
+.tm-sliderimage {
+    width: 100%;
+    height: 600px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.tm-slidertext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF; /* White text for contrast */
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker overlay for readability */
+    padding: 25px 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+}
+
+.tm-slidertext .bold {
+    font-family: 'Lora', serif;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tm-slidertext .simple {
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+
+/* Slider navigation arrows */
+.left, .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* Larger clickable area */
+    height: 40px;
+    cursor: pointer;
+    z-index: 10; /* Ensure arrows are above other content */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.left img, .right img {
+    width: 60%; /* Adjust arrow image size */
+    height: 60%;
+    object-fit: contain;
+}
+
+.left {
+    left: 20px;
+}
+
+.right {
+    right: 20px;
+}
+
+.left:hover, .right:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-50%) scale(1.05); /* Slight scale on hover */
+}
+
+
+/* --- Room Slider (Homepage) --- */
+.slider.room {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
+    margin: 50px auto;
+    max-width: 1200px; /* Constrain width */
+}
+
+.tm-rooms {
+    width: 280px; /* Fixed width for room cards */
+    margin: 15px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-rooms img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.tm-rooms p {
+    font-family: 'Lora', serif;
+    font-size: 1.3em;
+    color: #1F456E;
+    padding: 15px 10px;
+    font-weight: bold;
+}
+
+.tm-rooms:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+
+/* --- Services Section (Homepage) --- */
+.tm-servicesection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between service cards */
+    padding: 50px 20px;
+    background-color: #0A304E; /* Light green-blue background for services */
+    margin-bottom: 50px;
+}
+
+.tm-service {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 450px; /* Max width for service item */
+    flex: 1 1 45%; /* Allows items to grow/shrink, two per row on larger screens */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.tm-serimage {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.tm-service .b {
+    font-family: 'Lora', serif;
+    font-size: 1.4em;
+    color: #1F456E;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tm-service p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+
+/* --- Review Section (Homepage) --- */
+.tm-reviewsection {
+    padding: 50px 20px;
+    background-color: #F7F4E9; /* Consistent light background */
+}
+
+.tm-review {
+    max-width: 900px; /* Constrain width of review section */
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.tm-revcon {
+    text-align: center;
+}
+
+.tm-revcon .b {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    color: #1F456E;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tm-stars img {
+    width: 25px;
+    height: 25px;
+    display: inline-block; /* Keep stars in a row */
+    margin: 0 2px;
+}
+
+.tm-rev {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.tm-rev p:last-child {
+    font-weight: bold;
+    color: #36454F;
+    margin-top: 10px;
+}
+
+
+/* --- Make Reservation Button Section --- */
+.tm-makeres {
+    background-color: #0A304E; /* Deep sea blue background */
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 50px; /* Space above section */
+}
+
+.tm-resbutton a {
+    display: inline-block;
+    background-color: #4BBFAD; /* Aqua/Teal button color */
+    color: #FFFFFF;
+    padding: 18px 40px;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tm-resbutton a:hover {
+    background-color: #2BB5A5; /* Slightly darker aqua on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* --- Explore Page Specific Sections --- */
+.tm-exp1, .tm-exp2 {
+    display: flex;
+    flex-direction: row; /* Default: text left, image right */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Spacing between text and image */
+    padding: 60px 40px;
+    margin-bottom: 30px; /* Space between sections */
+    background-color: #FFFFFF; /* White background for content blocks */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    max-width: 1200px; /* Max width for content sections */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tm-exp2 {
+    flex-direction: row-reverse; /* Image left, text right for tm-exp2 */
+}
+
+.tm-exp1 p, .tm-exp2 p {
+    flex: 1; /* Allow text to take available space */
+    font-family: 'Lora', serif;
+    font-size: 1.8em; /* Larger, more descriptive text */
+    color: #1F456E;
+    text-align: center; /* Center text within its flex item */
+    padding: 20px; /* Padding around text */
+}
+
+.tm-exp1 img, .tm-exp2 img {
+    flex: 1; /* Allow image to take available space */
+    max-width: 500px; /* Max width for images within these sections */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Prominent shadow for images */
+}
+
+
+/* --- Rooms Page Specific Sections --- */
+.tm-roomsection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between room cards */
+    padding: 50px 20px;
+    margin-bottom: 50px;
+}
+
+.tm-roomcon {
+    position: relative;
+    width: 320px; /* Fixed width for room cards */
+    height: 400px; /* Fixed height for consistency */
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-roomcon:hover {
+    transform: translateY(-8px); /* Lift effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tm-roomimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Smooth zoom on hover */
+}
+
+.tm-roomcon:hover .tm-roomimage {
+    transform: scale(1.1);
+}
+
+.tm-roomcon p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text */
+    color: #FFFFFF;
+    padding: 15px 10px;
+    font-family: 'Lora', serif;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Room details overlay on hover */
+.tm-roomdetail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 48, 78, 0.95); /* Deep sea blue, almost opaque */
+    color: #E0FFFF; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%); /* Start from bottom */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 2; /* Ensure it's above the image and initial text */
+    padding: 20px;
+    text-align: center;
+}
+
+.tm-roomcon:hover .tm-roomdetail {
+    opacity: 1;
+    transform: translateY(0); /* Slide up into view */
+}
+
+.tm-roomdetail p {
+    position: static; /* Override absolute positioning */
+    background: none;
+    color: #E0FFFF;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.tm-roomdetail .bold {
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #4BBFAD; /* Highlight price */
+}
+
+
+/* --- Booking and Contact Page Forms --- */
+.tm-bookingsection, .tm-contactsection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 40px; /* Space between form columns */
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tm-form1, .tm-form2 {
+    flex: 1 1 45%; /* Allows columns to take up space, two per row on large screens */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #F7F4E9; /* Lighter background for form sections */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.tm-form1 p.bold, .tm-form2 p.bold, .tm-form1 label, .tm-form2 label {
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+    color: #1F456E;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 700;
+}
+
+.tm-form1 input[type="text"],
+.tm-form1 input[type="email"],
+.tm-form1 select,
+.tm-contactsection input[type="text"],
+.tm-contactsection input[type="email"],
+.tm-contactsection textarea,
+.tm-form2 input[type="text"].range {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px; /* Consistent spacing */
+    border: 1px solid #D3D3D3; /* Soft gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #36454F;
+    background-color: #FDFDFD;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-form1 input[type="text"]:focus,
+.tm-form1 input[type="email"]:focus,
+.tm-form1 select:focus,
+.tm-contactsection input[type="text"]:focus,
+.tm-contactsection input[type="email"]:focus,
+.tm-contactsection textarea:focus,
+.tm-form2 input[type="text"].range:focus {
+    border-color: #4BBFAD; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(75, 191, 173, 0.3); /* Subtle glow */
+    outline: none;
+}
+
+.tm-form1 select {
+    appearance: none; /* Remove default select arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231F456E%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.5H18.6c-5.4%200-10.7%202.6-13.2%206.5-2.5%203.9-2.5%208.5%200%2012.4l129.5%20129.5c2.5%202.5%205.7%204%209.1%204s6.6-1.5%209.1-4l129.5-129.5c2.6-4%202.6-8.6%200-12.5z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 30px; /* Space for the arrow */
+}
+
+
+/* Handle Counter Specific Styling (from handle-counter.min.css but adapted) */
+.handle-counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    overflow: hidden; /* Contains the border */
+    background-color: #FDFDFD;
+}
+
+.handle-counter .counter-minus,
+.handle-counter .counter-plus {
+    background-color: #0A304E; /* Deep sea blue for buttons */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0; /* Remove individual button border-radius */
+}
+
+.handle-counter .counter-minus:hover,
+.handle-counter .counter-plus:hover {
+    background-color: #1F456E; /* Slightly lighter on hover */
+}
+
+.handle-counter input {
+    flex-grow: 1;
+    text-align: center;
+    border: none; /* Remove border from input */
+    padding: 10px 0;
+    font-size: 1em;
+    background-color: transparent; /* Match parent background */
+    color: #36454F;
+}
+
+.handle-counter input:focus {
+    outline: none;
+}
+
+
+/* Vertical Line between forms (Desktop only) */
+.vertical-line {
+    width: 1px;
+    background-color: #D3D3D3; /* Light gray separator */
+    margin: 0 20px;
+    align-self: stretch; /* Stretch to fill height */
+}
+
+
+/* Submit Buttons */
+input[type=submit] {
+    display: block;
+    background: #4BBFAD; /* Aqua/Teal button color */
+    padding: 15px 30px;
+    color: #fff;
+    border: none; /* No border for a cleaner look */
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-top: 30px; /* Space above button */
+}
+
+#sub {
+    margin-left: auto; /* Align to right within its flex item */
+    margin-right: 0;
+}
+
+#sub2 {
+    margin-left: 0; /* Align to left within its flex item */
+    margin-right: auto;
+}
+
+input[type=submit]:hover {
+    background: #2BB5A5; /* Darker aqua on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+/* Contact Page Specifics */
+.tm-contactsection textarea {
+    min-height: 120px; /* More space for message */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.here {
+    display: block; /* Display as block for better spacing */
+    margin-top: 20px;
+    margin-bottom: 15px; /* Space below title */
+    font-size: 1.5em; /* Larger font */
+    color: #1F456E;
+    font-weight: 700;
+    text-align: center;
+}
+
+#place {
+    display: block; /* Centered below text */
+    margin: 0 auto 20px auto;
+    width: 40px; /* Larger icon */
+    max-width: 40px;
+}
+
+#map {
+    margin-top: 20px;
+    height: 350px; /* Increased map height */
+    width: 100%; /* Full width within its container */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Footer --- */
+.tm-footer {
+    background: #0A304E; /* Dark charcoal/black, for contrast */
+    color: #F0EFE7; /* Light text on dark background */
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px; /* Space between footer sections */
+    margin-top: 50px; /* Space above footer */
+    position: relative; /* For scroll-up button positioning */
+}
+
+.tm-us, .tm-address {
+    flex: 1 1 45%; /* Allows sections to wrap, two per row */
+    max-width: 450px;
+    min-width: 280px;
+    text-align: left;
+}
+
+.tm-us .bold, .tm-address .bold {
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #4BBFAD; /* Aqua/Teal for headings */
+    font-weight: bold;
+}
+
+.tm-us p, .tm-address p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #CCC;
+}
+
+.tm-address br {
+    display: block;
+    margin-bottom: 5px; /* Space out address lines */
+}
+
+.tm-media {
+    flex-basis: 100%; /* Full width for social media on smaller screens */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tm-media img {
+    display: inline-block; /* Keep social icons in a row */
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.tm-media img:hover {
+    transform: scale(1.15); /* Slight enlarge on hover */
+}
+
+/* Scroll to top button */
+.tm-up {
+    position: absolute;
+    bottom: 30px; /* Position from bottom */
+    right: 30px; /* Position from right */
+    width: 50px; /* Size of the button */
+    height: 50px;
+    background-color: #4BBFAD; /* Aqua/Teal background */
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.tm-up:hover {
+    background-color: #2BB5A5; /* Darker aqua on hover */
+    transform: translateY(-5px); /* Lift effect */
+}
+
+.tm-up img {
+    width: 60%; /* Size of the arrow image */
+    height: 60%;
+    filter: invert(100%); /* Make arrow white */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Laptops and smaller desktops */
+    .tm-header {
+        padding: 15px 20px;
+        flex-direction: column; /* Stack logo and nav vertically */
+    }
+
+    .tm-logo {
+        margin-bottom: 15px; /* Space below logo */
+    }
+
+    .tm-nav div ul li {
+        margin: 0 10px;
+    }
+
+    .tm-main p {
+        font-size: 2.8em;
+    }
+
+    .tm-sliderimage {
+        height: 500px;
+    }
+
+    .tm-slidertext {
+        padding: 20px 30px;
+    }
+
+    .tm-slidertext .bold {
+        font-size: 2.5em;
+    }
+
+    .tm-slidertext .simple {
+        font-size: 1.2em;
+    }
+
+    .tm-rooms {
+        width: 260px; /* Slightly smaller room cards */
+    }
+
+    .tm-service {
+        max-width: none; /* Allow full width for service items if needed */
+        flex-basis: 80%; /* Single column layout for services */
+    }
+
+    .tm-exp1, .tm-exp2 {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .tm-exp2 {
+        flex-direction: column; /* Keep stacked */
+    }
+
+    .tm-exp1 img, .tm-exp2 img {
+        max-width: 80%; /* Adjust image size */
+    }
+
+    .tm-exp1 p, .tm-exp2 p {
+        font-size: 1.5em;
+    }
+
+    .tm-roomcon {
+        width: 300px; /* Adjust room card size */
+        height: 370px;
+    }
+
+    .tm-bookingsection, .tm-contactsection {
+        flex-direction: column; /* Stack form columns */
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .vertical-line {
+        display: none; /* Hide vertical line on smaller screens */
+    }
+
+    .tm-form1, .tm-form2 {
+        flex-basis: 100%; /* Full width for form sections */
+        padding: 25px;
+    }
+
+    #sub, #sub2 {
+        margin-left: auto;
+        margin-right: auto; /* Center submit buttons */
+    }
+
+    .tm-footer {
+        flex-direction: column; /* Stack footer sections */
+        align-items: center;
+        text-align: center;
+    }
+
+    .tm-us, .tm-address {
+        max-width: 90%; /* Adjust width */
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets */
+    .tm-main p {
+        font-size: 2.2em;
+    }
+
+    .tm-sliderimage {
+        height: 400px;
+    }
+
+    .tm-slidertext .bold {
+        font-size: 2em;
+    }
+
+    .tm-slidertext .simple {
+        font-size: 1.1em;
+    }
+
+    .left, .right {
+        width: 35px;
+        height: 35px;
+    }
+
+    .tm-rooms {
+        width: 240px; /* Further adjust room card size */
+        margin: 10px;
+    }
+
+    .tm-service {
+        flex-direction: column; /* Stack icon and text */
+        text-align: center;
+        align-items: center;
+    }
+
+    .tm-serimage {
+        margin-right: 0;
+        margin-bottom: 10px; /* Space below icon */
+    }
+
+    .tm-review {
+        padding: 25px;
+    }
+
+    .tm-review .b {
+        font-size: 1.5em;
+    }
+
+    .tm-exp1 p, .tm-exp2 p {
+        font-size: 1.3em;
+    }
+
+    .tm-resbutton a {
+        font-size: 1.1em;
+        padding: 15px 30px;
+    }
+
+    .tm-up {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+    .tm-header {
+        padding: 10px 15px;
+    }
+
+    .tm-logo {
+        width: 180px;
+        margin-bottom: 10px;
+    }
+
+    .tm-nav div ul {
+        flex-direction: column; /* Stack nav items completely */
+    }
+
+    .tm-nav div ul li {
+        margin: 5px 0; /* Vertical spacing for nav items */
+    }
+
+    .tm-nav div ul li a {
+        font-size: 1em;
+        padding: 8px 10px;
+    }
+
+    .tm-main p {
+        font-size: 1.8em;
+        padding: 30px 10px;
+    }
+
+    .tm-sliderimage {
+        height: 300px;
+    }
+
+    .tm-slidertext {
+        padding: 15px 20px;
+        width: 90%; /* Wider text overlay */
+    }
+
+    .tm-slidertext .bold {
+        font-size: 1.8em;
+    }
+
+    .tm-slidertext .simple {
+        font-size: 1em;
+    }
+
+    .left, .right {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tm-rooms {
+        width: 90%; /* Full width for room cards on very small screens */
+        margin: 10px auto;
+    }
+
+    .tm-service {
+        padding: 20px;
+    }
+
+    .tm-service .b {
+        font-size: 1.2em;
+    }
+
+    .tm-service p {
+        font-size: 0.9em;
+    }
+
+    .tm-review {
+        padding: 20px;
+    }
+
+    .tm-review .b {
+        font-size: 1.3em;
+    }
+
+    .tm-rev {
+        font-size: 1em;
+    }
+
+    .tm-exp1 p, .tm-exp2 p {
+        font-size: 1.1em;
+    }
+
+    .tm-exp1 img, .tm-exp2 img {
+        max-width: 95%;
+    }
+
+    .tm-roomcon {
+        width: 90%; /* Full width for room cards */
+        height: 350px;
+        margin: 15px auto;
+    }
+
+    .tm-roomdetail .bold {
+        font-size: 1.3em;
+    }
+
+    .tm-roomdetail p {
+        font-size: 0.85em;
+    }
+
+    .tm-form1, .tm-form2 {
+        padding: 20px;
+    }
+
+    .tm-form1 input, .tm-form1 select,
+    .tm-contactsection input, .tm-contactsection textarea,
+    .tm-form2 input.range {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .handle-counter .counter-minus,
+    .handle-counter .counter-plus {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+
+    input[type=submit] {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .here {
+        font-size: 1.2em;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .tm-us, .tm-address {
+        font-size: 0.9em;
+        min-width: unset; /* Allow to shrink smaller */
+        padding: 0 10px;
+    }
+
+    .tm-footer {
+        padding: 30px 15px;
+    }
+
+    .tm-up {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above slider content */
+    font-size: 0; /* Hide default button text */
+    outline: none; /* Remove outline on focus for a cleaner look, but consider adding a custom focus style for accessibility */
+}
+
+.slider-button.left {
+    left: 10px;
+    background-image: url('../images/back.png'); /* Path to your left arrow image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider-button.right {
+    right: 10px;
+    background-image: url('../images/next.png'); /* Path to your right arrow image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider-button:hover {
+    opacity: 0.8; /* Subtle hover effect */
+}
+.menu-toggle {
+    display: none; /* Hidden by default on desktop, shown by media query */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Width of the hamburger icon */
+    height: 25px; /* Height of the hamburger icon */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative; /* Needed for positioning the lines during transform */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #E0FFFF; /* Color of the hamburger lines */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* On mobile, hide the default nav and show the hamburger */
+@media (max-width: 992px) { /* Adjust breakpoint as needed for when you want the menu to appear */
+    .tm-nav div ul {
+        display: none; /* Hide the full navigation menu by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: #0A304E; /* Background for the mobile menu */
+        
+        position: fixed; /* Keep this to position at the top of the viewport */
+        top: 0;          /* Keep this to position at the very top */
+        left: 0;
+        /* REMOVE: height: 100%; */ /* Remove this line */
+        overflow-y: auto; /* Keep this to allow scrolling if content is too long */
+        padding-top: 60px; /* Adjust this value if needed based on your header's height */
+        
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 999; 
+    }
+
+    .tm-nav div ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+
+    .tm-nav div ul li {
+        margin: 0; /* Remove horizontal margin for stacked links */
+    }
+
+    .tm-nav div ul li a {
+        padding: 12px 15px; /* Larger tap target */
+        display: block; /* Make links full width for better tapping */
+        border-bottom: none; /* Remove underline for mobile */
+        transition: background-color 0.3s ease;
+    }
+
+    .tm-nav div ul li a:hover {
+        background-color: #1F456E; /* Highlight on hover/tap */
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+        order: 2; /* To place it after the logo if header is flex */
+    }
+
+    /* Adjust header to accommodate the hamburger icon if needed */
+    .tm-header {
+        justify-content: space-between; /* Space out logo and menu toggle */
+        align-items: center;
+        padding: 15px 20px;
+        flex-direction: row; /* Keep logo and hamburger on one row */
+    }
+
+    .tm-logo {
+        margin-bottom: 0; /* Remove bottom margin if header is row */
+    }
+}
+
+/* Animation for the hamburger icon when active */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+.tm-rooms-cta {
+    background-color: #F5F5DC; /* Soft sandy beige, consistent with body background */
+    padding: 80px 20px; /* Generous padding top and bottom */
+    text-align: center;
+    overflow: hidden; /* Ensures content doesn't spill out during animation */
+    margin-top: 50px; /* Add some space above this section */
+}
+
+/* This class will be added by JavaScript when the section comes into view */
+.tm-rooms-cta.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-rooms-cta-content h2 {
+    font-family: 'Lora', serif; /* Use your heading font */
+    font-size: 2.5em;
+    color: #0A304E; /* Deep sea blue, from your header */
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.tm-rooms-cta-content p {
+    max-width: 750px; /* Limit paragraph width for readability */
+    margin: 0 auto 30px auto; /* Center the paragraph and add space below */
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: #36454F; /* Charcoal gray */
+}
+
+/* Styling for the button */
+.tm-button {
+    display: inline-block;
+    padding: 18px 40px; /* Generous padding for a clickable area */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px; /* Slightly rounded corners */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.8px;
+}
+
+.tm-button-primary {
+    background-color: #0A304E; /* Primary brand color (a vibrant pink/red) */
+    color: #fff; /* White text */
+    border: 2px solid #0A304E; /* Solid border matching background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.tm-button-primary:hover {
+    background-color: #0A304E; /* Darker shade on hover */
+    border-color: #0A304E;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+    .tm-rooms-cta {
+        padding: 60px 15px; /* Adjust padding for mobile */
+        margin-top: 30px;
+    }
+    .tm-rooms-cta-content h2 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+    .tm-rooms-cta-content p {
+        font-size: 1em; /* Smaller paragraph text */
+    }
+    .tm-button {
+        padding: 15px 30px; /* Smaller button padding */
+        font-size: 0.95em;
+    }
+}

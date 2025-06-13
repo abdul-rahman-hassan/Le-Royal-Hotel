@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le Royal Hotel - Rooms</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleaps.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+    
+</head>
+    
+<body>
+<header class="tm-header">
+    <img class="tm-logo" src="images/LaRoyale.png" alt="La Royale Hotel Logo">
+    
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav class="tm-nav">
+        <div id="main-nav-links"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="https://maps.app.goo.gl/KHP4cSev8gACutn67">Location</a></li>
+                <li><a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view">Price List</a></li>
+                </ul>    
+        </div>
+    </nav>
+</header>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('main-nav-links').querySelector('ul');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+    });
+</script> 
+    
+    <section class="tm-roomsection">
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>1 Bedroom</p>
+                <p>Lake View</p>
+                <p>2 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a> 
+                <a href="https://drive.google.com/file/d/16h55iKMGTf8mgI8c8hRRLOedlyuokugN/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/1bed.jpg" alt="Luxury Suite">
+            <p>Deluxe Double Room</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>2 Bedroom</p>
+                <p>Lake View</p>
+                <p>4 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1ELpw64QrczBKkK6UheQeGK1X03Jybs6P/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/2lake.jpg" alt="Deluxe Suite">
+            <p>Two Bedroom Lake View</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>2 Bedroom</p>
+                <p>Pool View</p>
+                <p>4 Guests</p> 
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1nob2GDgADlRTpLjq5KepGw0NY6Rs42_n/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/2pool.jpg" alt="Luxury Suite">
+            <p>Two Bedroom Pool View</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>3 Bedroom</p>
+                <p>Lake View</p>
+                <p>6 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1_VRxvh5Ov1X8kv71G7t2IkhmVh87WeYl/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/3rooms.jpg" alt="Premier Suite">
+            <p>Three Bedroom Lake View</p>
+        </div>
+        
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>4 Bedrooms</p>
+                <p>Pool View</p>
+                <p>8 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1levXIuI5s6JVVJ_De-n26eEBIUDrUXRG/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/4rooms.jpg" alt="Luxury Room">
+            <p>Four Bedroom Pool View</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>5 Bedrooms</p>
+                <p>Lake View</p>
+                <p>Private Pool</p>
+                <p>9 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1cVd88IgUyLeBVSE2wmeoaVfRbRXISsCI/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/5rooms.jpg" alt="Deluxe Room">
+            <p>Five Bedroom Lake View</p>
+        </div>
+        <div class="tm-roomcon">
+            <div class="tm-roomdetail">
+                <p>6 Bedrooms</p>
+                <p>Private Pool</p>
+                <p>11 Guests</p>
+                <a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view?usp=drive_link" class="tm-video-button" target="_blank">View Price List</a>
+                <a href="https://drive.google.com/file/d/1DSOACFmfTnB6vFlCCxjIUvAO-z393uvJ/view?usp=drive_link" class="tm-video-button" target="_blank">Watch Video Tour</a>
+            </div>
+            <img class="tm-roomimage" src="images/6rooms.jpg" alt="Premier Room">
+            <p>Six Bedroom Private Pool</p>
+        </div>
+    </section>
+    
+    <footer class="tm-footer">
+    
+        <div class="tm-us">
+            <p class="bold">About Us</p>
+            <p>Welcome to Le Royal Hotel, a top-rated 4-star hotel in Marina 5, Zone 24. We're perfectly located near the New Alamein City, offering easy access to all services for a truly luxurious and convenient stay. Enjoy our beautiful outdoor pool overlooking the lake, free private parking, a lovely garden, plus our own bar and restaurant. We provide free Wi-Fi in all areas. Many rooms have a private terrace, and every apartment comes with a kitchen equipped with a fridge, microwave, and kettle. Our 24-hour front desk staff speak Arabic and English, always ready to help you. At Le Royal Hotel, we're here to ensure your comfort, elegance, and outstanding service.</p>    
+        </div>
+        <br/>
+        <div class="gmap_outer">
+        <div class="gmap_canvas">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.312817972416!2d28.9690589!3d30.849915799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145fed9c8026a17b%3A0x275899f970792855!2sLe%20Royal%20Hotel%20Marina!5e0!3m2!1sen!2seg!4v1749669177342!5m2!1sen!2seg" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="#top" class="tm-up"><img src="images/up.png" alt="Scroll to top"></a>
+    </footer>
+    
+</body>
+</html>
