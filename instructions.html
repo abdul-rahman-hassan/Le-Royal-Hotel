@@ -18,24 +18,37 @@
 </head>
 <body>
     <header class="tm-header">
-        <img class="tm-logo" src="images/LaRoyale.png" alt="La Royale Hotel Logo">
-        
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+    <img class="tm-logo" src="images/LaRoyale.png" alt="La Royale Hotel Logo">
+    
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-        <nav class="tm-nav">
-            <div id="main-nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="instructions.html">Instructions</a></li>
+    <nav class="tm-nav">
+        <div id="main-nav-links"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="instructions.html">Instructions</a></li>
+                <li><a href="https://maps.app.goo.gl/KHP4cSev8gACutn67">Location</a></li>
+                <li><a href="https://drive.google.com/file/d/1da4NOjmawHkRz9Cifen-ACgyBSrz4cnv/view">Price List</a></li>
                 </ul>    
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('main-nav-links').querySelector('ul');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+    });
+</script> 
 
     <div class="language-selector-container">
         <button id="lang-ar" class="language-button active" onclick="setLanguage('ar')">العربية</button>
@@ -66,12 +79,19 @@
     <footer class="tm-footer">
         <div class="tm-us">
             <p class="bold">About Us</p>
-            <p>We are a part of a chain of luxury hotels which extends all over the world. We provide a luxurious stay with various value-added and free services which will make you visit us over and over again.</p>    
+            <p>Welcome to Le Royal Hotel, 
+a top-rated 4-star hotel in Marina 5, Zone 24. We're perfectly located near the New Alamein City, offering easy access to all services for a truly luxurious and convenient stay.
+
+Enjoy our beautiful outdoor pool overlooking the lake, free private parking, a lovely garden, plus our own bar and restaurant. 
+We provide free Wi-Fi in all areas. Many rooms have a private terrace, and every apartment comes with a kitchen equipped with a fridge, microwave, and kettle. 
+Our 24-hour front desk staff speak Arabic and English, always ready to help you.
+
+At Le Royal Hotel, we're here to ensure your comfort, elegance, and outstanding service.</p>    
         </div>
         <br/>
         <div class="gmap_outer">
             <div class="gmap_canvas">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.312817972416!2d28.9690589!3d30.849915799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145fed9c8026a17b%3A0x275899f970792855!2sLe%20Royal%20Hotel%20Marina!5e0!3m2!1sen!2seg!4v1749669177342!5m2!1sen!2seg" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.312817972416!2d28.9690589!3d30.849915799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145fed9c8026a17b%3A0x275899f970792855!2sLe%20Royal%20Hotel%20Marina!5e0!3m2!1sen!2seg!4v1749669177342!5m2!1sen!2seg" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <a href="#top" class="tm-up"><img src="images/up.png" alt="Scroll to top"></a>
@@ -89,7 +109,7 @@
                     },
                     {
                         title: "طريقة دخول مارينا",
-                        text: "يتم الدخول إلى مارينا عبر البوابة رقم 6. عند الوصول، سيكون اسم النزيل مسجلاً على البوابة. أثناء الإقامة، يمكن الدخول والخروج باستخدام مفتاح الغرفة وغلافه. في أي حالة طارئة، يرجى التواصل مع الرقم: 01090094909."
+                        text: "يتم الدخول إلى مارينا عبر البوابة رقم 6. عند الوصول، سيكون اسم النزيل مسجلاً على البوابة. أثناء الإقامة، يمكن الدخول والخروج باستخدام مفتاح الغرفة وغلافه. في أي حالة طارئة، يرجى التواصل مع الرقم: 01090078866."
                     },
                     {
                         title: "سياسة الأطفال",
@@ -97,10 +117,8 @@
                     },
                     {
                         title: "الإفطار والمطعم",
-                        text: "يُقدم الإفطار على هيئة بوفيه مفتوح يوميًا من الساعة 8:30 صباحًا حتى الساعة 10:30 صباحًا. يُرجى العلم أن خدمة الإفطار داخل الغرف غير متاحة. يتضمن الإفطار المجاني نفس عدد الأفراد البالغين المقيمين بالغرفة، بالإضافة إلى طفل واحد يقل عمره عن 6 سنوات. في حال تجاوز هذا العدد، سيتم احتساب 350 جنيهًا مصريًا للفرد الزائد (الكبير). يُحتسب طفلان يقل عمرهما عن 12 سنة كفرد بالغ واحد لأغراض الإفطار. لطلبات المطعم في أي وقت، يرجى الاتصال بالرقم الداخلي 222 من هاتف الغرفة، وللتواصل مع مكتب الاستقبال يرجى الاتصال بالرقم 0.",
-                        buttons: [
-                            { text: "قائمة الطعام", action: "openMenuModal" }
-                        ]
+                        text: "يُقدم الإفطار داخل الغرفه من الساعه ٩ الي الساعه ١٢ حسب الطلب ، يتضمن الإفطار المجاني نفس عدد الأفراد البالغين المقيمين بالغرفة ،بالإضافة إلى طفل واحد يقل عمره عن 6 سنوات. في حال تجاوز هذا العدد، سيتم احتساب 350 جنيهًا مصريًا للفرد الزائد (الكبير). يُحتسب طفلان يقل عمرهما عن 12 سنة كفرد بالغ واحد لأغراض الإفطار. لطلبات المطعم في أي وقت، يرجى الاتصال بالرقم الداخلي 444 من هاتف الغرفة، وللتواصل مع مكتب الاستقبال يرجى الاتصال بالرقم 0.",
+
                     },
                     {
                         title: "الشواطئ",
@@ -121,9 +139,7 @@
                         title: "خدمات أخرى",
                         text: [
                             `يتوفر داخل الفندق خدمة سبا ومساج مدفوعة. للمعلومات: <button onclick="openSpaModal()" class="spa-info-button">عرض المعلومات</button>`,
-                            "تتوفر خدمة المغسلة مدفوعة لغسيل وكي الملابس. يُرجى العلم أنه لا تتوفر مكواة داخل الغرف.",
-                            "محتويات صينية القهوة (المياه، الشاي، النسكافيه) يتم توفيرها مجانًا في يوم الوصول فقط.",
-                            "تتوفر خدمة تنظيف الغرف يوميًا من الساعة 9 صباحًا حتى الساعة 5 مساءً. يرجى تعليق علامة التنظيف على الباب خلال هذه الأوقات أو التواصل مع مكتب الاستقبال لإرسال طاقم التنظيف للغرفة."
+                            "تتوفر خدمة المغسلة مدفوعة لغسيل وكي الملابس. يُرجى العلم أنه لا تتوفر مكواة داخل الغرف.","تتوفر خدمة تنظيف الغرف يوميًا من الساعة 9 صباحًا حتى الساعة 5 مساءً. يرجى تعليق علامة التنظيف على الباب خلال هذه الأوقات أو التواصل مع مكتب الاستقبال لإرسال طاقم التنظيف للغرفة."
                         ]
                     }
                 ]
@@ -137,7 +153,7 @@
                     },
                     {
                         title: "Marina Access Method",
-                        text: "Entry to Marina is via Gate 6. Upon arrival, your name will be listed at the gate. During your stay, use your room key and its cover for entry and exit. For any emergencies, please contact: 01090094909."
+                        text: "Entry to Marina is via Gate 6. Upon arrival, your name will be listed at the gate. During your stay, use your room key and its cover for entry and exit. For any emergencies, please contact: 01090078866."
                     },
                     {
                         title: "Children Policy",
@@ -145,10 +161,7 @@
                     },
                     {
                         title: "Breakfast and Restaurant",
-                        text: "Breakfast is an open buffet served daily from 8:30 AM to 10:30 AM. Please note that room service for breakfast is not permitted. Complimentary breakfast is offered for the number of adult guests staying in the room, plus one child under 6 years old. For any additional guests (adults) or children beyond this allowance, an extra charge of 350 EGP per person applies. Two children under 12 years old are counted as one adult for breakfast purposes. For restaurant orders, please dial 222 from your in-room phone. To reach reception, please dial 0.",
-                        buttons: [
-                            { text: "Restaurant Menu", action: "openMenuModal" }
-                        ]
+                        text: "Breakfast is served in the room upon request from 9:00 AM to 12:00 PM. The complimentary breakfast includes the same number of adult guests staying in the room, in addition to one child under the age of 6. If the number exceeds this limit, an additional charge of 350 EGP per extra adult will apply. For breakfast purposes, two children under the age of 12 are counted as one adult. For restaurant orders at any time, please dial the internal number 444 from the room phone. To contact the front desk, please call 0.",
                     },
                     {
                         title: "Beaches",
@@ -170,7 +183,7 @@
                         text: [
                             `Paid spa and massage services are available within the hotel. For information: <button onclick="openSpaModal()" class="spa-info-button">View Info</button>`,
                             "Paid laundry service for washing and ironing clothes is also available. Kindly note that irons are not provided in the rooms.",
-                            "The coffee tray contents (water, tea, Nescafe) are provided free of charge on arrival day only.",
+
                             "Room cleaning service is available daily from 9:00 AM to 5:00 PM. Please hang the 'Make Up Room' sign on your door during these hours or contact the reception desk to arrange cleaning."
                         ]
                     }

@@ -1316,7 +1316,7 @@ input[type=submit]:focus {
     font-family: 'Open Sans', sans-serif;
 }
 .language-button.active {
-    background-color: #2196f3; /* Accent blue when active */
+    background-color: #0A304E; /* Accent blue when active */
     color: #ffffff;
     transform: none; /* Removed the slight lift on active */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* More subtle active shadow */
@@ -1346,7 +1346,7 @@ input[type=submit]:focus {
     font-weight: 700;
     margin-bottom: 30px;
     text-align: center;
-    border-bottom: 3px solid #64b5f6; /* Blue underline */
+    border-bottom: 3px solid #125b97; /* Blue underline */
     padding-bottom: 15px;
     position: relative;
 }
@@ -1358,7 +1358,7 @@ input[type=submit]:focus {
     transform: translateX(-50%);
     width: 70px;
     height: 3px;
-    background-color: #2196f3; /* Accent blue highlight */
+    background-color: #0A304E; /* Accent blue highlight */
     border-radius: 5px;
 }
 
@@ -1395,7 +1395,7 @@ input[type=submit]:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #007bff; /* Primary blue button */
+    background-color: #0A304E; /* Primary blue button */
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -1408,7 +1408,7 @@ input[type=submit]:focus {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .instruction-button-link:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0A304E; /* Darker blue on hover */
     transform: translateY(-2px);
 }
 
@@ -1489,7 +1489,7 @@ input[type=submit]:focus {
 
 /* Specific styling for the SPA info button embedded in text */
 .instruction-section-content .spa-info-button {
-    background-color: #17a2b8; /* Info blue button */
+    background-color: #0A304E; /* Info blue button */
     color: #ffffff;
     padding: 8px 15px;
     border-radius: 5px;
