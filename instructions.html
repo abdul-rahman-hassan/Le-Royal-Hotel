@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Le Royal Hotel - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/slick.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+</head>
+<body>
+    <header class="tm-header">
+        <img class="tm-logo" src="images/LaRoyale.png" alt="La Royale Hotel Logo">
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="tm-nav">
+            <div id="main-nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                </ul>    
+            </div>
+        </nav>
+    </header>
+
+    <div class="language-selector-container">
+        <button id="lang-ar" class="language-button active" onclick="setLanguage('ar')">العربية</button>
+        <button id="lang-en" class="language-button" onclick="setLanguage('en')">English</button>
+    </div>
+
+    <section class="tm-instructions-section">
+        <div id="content-container" class="container">
+            </div>
+    </section>
+
+    <div id="menuModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeMenuModal()">×</span>
+            <div id="menuModalContent" class="text-center">
+                </div>
+        </div>
+    </div>
+
+    <div id="spaModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeSpaModal()">×</span>
+            <div id="spaModalContent" class="text-center">
+                </div>
+        </div>
+    </div>
+
+    <footer class="tm-footer">
+        <div class="tm-us">
+            <p class="bold">About Us</p>
+            <p>We are a part of a chain of luxury hotels which extends all over the world. We provide a luxurious stay with various value-added and free services which will make you visit us over and over again.</p>    
+        </div>
+        <br/>
+        <div class="gmap_outer">
+            <div class="gmap_canvas">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.312817972416!2d28.9690589!3d30.849915799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145fed9c8026a17b%3A0x275899f970792855!2sLe%20Royal%20Hotel%20Marina!5e0!3m2!1sen!2seg!4v1749669177342!5m2!1sen!2seg" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <a href="#top" class="tm-up"><img src="images/up.png" alt="Scroll to top"></a>
+    </footer>
+
+    <script>
+        // Data for both languages
+        const content = {
+            ar: {
+                hotelInstructions: "تعليمات الفندق",
+                sections: [
+                    {
+                        title: "مواعيد الوصول والمغادرة",
+                        text: "وقت استلام الغرفة هو الساعة 3 عصرًا، ووقت تسجيل المغادرة هو الساعة 12 ظهرًا. في حال المغادرة بعد الساعة 12 ظهرًا، سيتم احتساب تكلفة نصف ليلة إضافية على النزيل."
+                    },
+                    {
+                        title: "طريقة دخول مارينا",
+                        text: "يتم الدخول إلى مارينا عبر البوابة رقم 6. عند الوصول، سيكون اسم النزيل مسجلاً على البوابة. أثناء الإقامة، يمكن الدخول والخروج باستخدام مفتاح الغرفة وغلافه. في أي حالة طارئة، يرجى التواصل مع الرقم: 01090094909."
+                    },
+                    {
+                        title: "سياسة الأطفال",
+                        text: "في جميع الغرف: يُسمح باستضافة طفل واحد مجانًا يقل عمره عن 6 سنوات، على أن يشارك السرير مع ذويه وتشمل إقامته وجبة الإفطار. أي فرد إضافي، سواء كان طفلًا أو بالغًا، سيتم احتساب تكلفة قدرها 1000 جنيه مصري."
+                    },
+                    {
+                        title: "الإفطار والمطعم",
+                        text: "يُقدم الإفطار على هيئة بوفيه مفتوح يوميًا من الساعة 8:30 صباحًا حتى الساعة 10:30 صباحًا. يُرجى العلم أن خدمة الإفطار داخل الغرف غير متاحة. يتضمن الإفطار المجاني نفس عدد الأفراد البالغين المقيمين بالغرفة، بالإضافة إلى طفل واحد يقل عمره عن 6 سنوات. في حال تجاوز هذا العدد، سيتم احتساب 350 جنيهًا مصريًا للفرد الزائد (الكبير). يُحتسب طفلان يقل عمرهما عن 12 سنة كفرد بالغ واحد لأغراض الإفطار. لطلبات المطعم في أي وقت، يرجى الاتصال بالرقم الداخلي 222 من هاتف الغرفة، وللتواصل مع مكتب الاستقبال يرجى الاتصال بالرقم 0.",
+                        buttons: [
+                            { text: "قائمة الطعام", action: "openMenuModal" }
+                        ]
+                    },
+                    {
+                        title: "الشواطئ",
+                        text: "يتوفر دخول مجاني يوميًا لشاطئ جولدن اوشن وشاطئ لافام للسيدات، باستثناء يوم المغادرة. يُرجى الحصول على تصريح الدخول بعدد الأفراد من مكتب الاستقبال يوميًا. نود التنويه بأن الفندق لا يوفر سيارات أو عربات جولف للتوصيل إلى الشواطئ، ويمكن للنزلاء استخدام تطبيقات النقل المتاحة مثل أوبر أو إن درايف للوصول إلى الشواطئ بسهولة.",
+                        buttons: [
+                            { text: "موقع شاطئ جولدن اوشن", link: "https://www.google.com/maps/place/Golden+Ocean+Beach,+El+sahel,+marina+5,+Marsa+Matrouh+Governorate+51718/data=!4m2!3m1!1s0x145fedfe30246283:0xbdaa08057b318335?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjIwLjEYACDXggMqfSw5NDI1OTU0OTk0Mjc1MzIyLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LD94MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjU4MzI1QgJFRw%3D%3D&skid=75369fb7-164a-47e1-808-9da7bca215a4" },
+                            { text: "موقع شاطئ لافام للسيدات", link: "https://www.google.com/maps/place/%D8%B4%D8%A7%D8%B7%D8%A6+%D9%84%D8%A7%D9%81%D8%A7%D9%85+%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7+%D9%A6%E2%80%AD/@30.8375956,28.9903624,17z/data=!3m1!4b1!4m6!3m5!1s0x145fed0f76fcf573:0xbe9b3199c6e84e02!8m2!3d30.8375956!4d28.9903624!16s%2Fg%2F11t6hgc980?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" }
+                        ]
+                    },
+                    {
+                        title: "تحذيرات مهمة",
+                        text: [
+                            "يُرجى العلم أن الفندق غير مسؤول عن أي متعلقات شخصية ثمينة تُترك خارج الخزنة المخصصة.",
+                            "في حالة فقدان مفتاح الغرفة، يتم دفع مبلغ 250 جنيهًا مصريًا لمكتب الاستقبال."
+                        ]
+                    },
+                    {
+                        title: "خدمات أخرى",
+                        text: [
+                            `يتوفر داخل الفندق خدمة سبا ومساج مدفوعة. للمعلومات: <button onclick="openSpaModal()" class="spa-info-button">عرض المعلومات</button>`,
+                            "تتوفر خدمة المغسلة مدفوعة لغسيل وكي الملابس. يُرجى العلم أنه لا تتوفر مكواة داخل الغرف.",
+                            "محتويات صينية القهوة (المياه، الشاي، النسكافيه) يتم توفيرها مجانًا في يوم الوصول فقط.",
+                            "تتوفر خدمة تنظيف الغرف يوميًا من الساعة 9 صباحًا حتى الساعة 5 مساءً. يرجى تعليق علامة التنظيف على الباب خلال هذه الأوقات أو التواصل مع مكتب الاستقبال لإرسال طاقم التنظيف للغرفة."
+                        ]
+                    }
+                ]
+            },
+            en: {
+                hotelInstructions: "Hotel Instructions",
+                sections: [
+                    {
+                        title: "Check-in and Check-out Times",
+                        text: "Check-in time is 3:00 PM, and check-out is 12:00 PM. A half-night fee will be charged for departures after 12:00 PM."
+                    },
+                    {
+                        title: "Marina Access Method",
+                        text: "Entry to Marina is via Gate 6. Upon arrival, your name will be listed at the gate. During your stay, use your room key and its cover for entry and exit. For any emergencies, please contact: 01090094909."
+                    },
+                    {
+                        title: "Children Policy",
+                        text: "In all room types: one child under 6 years old is welcome free of charge, sharing parents' bed and including breakfast. Kindly note that any additional person (child or adult) will incur a charge of 1000 EGP."
+                    },
+                    {
+                        title: "Breakfast and Restaurant",
+                        text: "Breakfast is an open buffet served daily from 8:30 AM to 10:30 AM. Please note that room service for breakfast is not permitted. Complimentary breakfast is offered for the number of adult guests staying in the room, plus one child under 6 years old. For any additional guests (adults) or children beyond this allowance, an extra charge of 350 EGP per person applies. Two children under 12 years old are counted as one adult for breakfast purposes. For restaurant orders, please dial 222 from your in-room phone. To reach reception, please dial 0.",
+                        buttons: [
+                            { text: "Restaurant Menu", action: "openMenuModal" }
+                        ]
+                    },
+                    {
+                        title: "Beaches",
+                        text: "Enjoy complimentary daily access to Golden Ocean Beach and La Femme Beach (ladies only), except on departure day. Please obtain daily entry permits for your party from the reception desk. Kindly note that the hotel does not provide cars or golf carts for beach transportation; guests may use ride-hailing apps like Uber or InDrive for convenient access.",
+                        buttons: [
+                            { text: "Golden Ocean Beach Location", link: "https://www.google.com/maps/place/Golden+Ocean+Beach,+El+sahel,+marina+5,+Marsa+Matrouh+Governorate+51718/data=!4m2!3m1!1s0x145fedfe30246283:0xbdaa08057b318335?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjIwLjEYACDXggMqfSw5NDI1OTU0OTk0Mjc1MzIyLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LD94MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjU4MzI1QgJFRw%3D%3D&skid=75369fb7-164a-47e1-8028-9da7bca215a4" },
+                            { text: "La Femme Beach Location", link: "https://www.google.com/maps/place/%D8%B4%D8%A7%D8%B7%D8%A6+%D9%84%D8%A7%D9%81%D8%A7%D9%85+%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7+%D9%A6%E2%80%AD/@30.8375956,28.9903624,17z/data=!3m1!4b1!4m6!3m5!1s0x145fed0f76fcf573:0xbe9b3199c6e84e02!8m2!3d30.8375956!4d28.9903624!16s%2Fg%2F11t6hgc980?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" }
+                        ]
+                    },
+                    {
+                        title: "Important Warnings",
+                        text: [
+                            "Please be aware that the hotel is not responsible for valuable personal belongings left outside the designated safe.",
+                            "In case of losing the room key, a charge of 250 EGP will be paid to the reception desk."
+                        ]
+                    },
+                    {
+                        title: "Other Services",
+                        text: [
+                            `Paid spa and massage services are available within the hotel. For information: <button onclick="openSpaModal()" class="spa-info-button">View Info</button>`,
+                            "Paid laundry service for washing and ironing clothes is also available. Kindly note that irons are not provided in the rooms.",
+                            "The coffee tray contents (water, tea, Nescafe) are provided free of charge on arrival day only.",
+                            "Room cleaning service is available daily from 9:00 AM to 5:00 PM. Please hang the 'Make Up Room' sign on your door during these hours or contact the reception desk to arrange cleaning."
+                        ]
+                    }
+                ]
+            }
+        };
+
+        let currentLang = 'ar'; // Default language
+
+        /**
+         * Renders the content of the page based on the currently selected language.
+         * It clears existing content, sets text direction, creates titles, sections,
+         * and buttons.
+         */
+        function renderContent() {
+            const container = document.getElementById('content-container');
+            container.innerHTML = ''; // Clear previous content
+
+            const langData = content[currentLang];
+
+            // Set text direction based on language
+            document.documentElement.setAttribute('lang', currentLang); // Set lang attribute on HTML
+            container.style.direction = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Create main title for the instructions page
+            const mainTitle = document.createElement('h1');
+            mainTitle.className = `main-instruction-title ${currentLang === 'ar' ? 'text-right' : 'text-left'}`; // Align based on language
+            mainTitle.textContent = langData.hotelInstructions;
+            container.appendChild(mainTitle);
+
+            // Iterate through sections and add them to the container
+            langData.sections.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'mb-8 pb-4'; // Margin bottom for spacing
+
+                const titleElement = document.createElement('h2');
+                titleElement.className = `instruction-section-title ${currentLang === 'ar' ? 'text-right' : 'text-left'}`;
+                titleElement.textContent = section.title;
+                sectionDiv.appendChild(titleElement);
+
+                // Check if text is an array (for sections with multiple points)
+                if (Array.isArray(section.text)) {
+                    section.text.forEach(paragraphText => {
+                        const textElement = document.createElement('p');
+                        textElement.className = `instruction-section-content ${currentLang === 'ar' ? 'text-right' : 'text-left'}`;
+                        textElement.innerHTML = paragraphText; // Use innerHTML for paragraphs with embedded buttons/links
+                        sectionDiv.appendChild(textElement);
+                    });
+                } else {
+                    const textElement = document.createElement('p');
+                    textElement.className = `instruction-section-content ${currentLang === 'ar' ? 'text-right' : 'text-left'}`;
+                    textElement.textContent = section.text;
+                    sectionDiv.appendChild(textElement);
+                }
+
+                // Add buttons if they exist for the section
+                if (section.buttons && section.buttons.length > 0) {
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.className = `mt-4 flex flex-wrap gap-4 ${currentLang === 'ar' ? 'justify-end' : 'justify-start'}`;
+
+                    section.buttons.forEach(button => {
+                        if (button.action === "openMenuModal") {
+                            const btn = document.createElement('button');
+                            btn.className = "instruction-button-link"; // Use new class
+                            btn.textContent = button.text;
+                            btn.onclick = openMenuModal;
+                            buttonsDiv.appendChild(btn);
+                        } else {
+                            const anchor = document.createElement('a');
+                            anchor.href = button.link;
+                            anchor.target = "_blank";
+                            anchor.rel = "noopener noreferrer";
+                            anchor.className = "instruction-button-link"; // Use new class
+                            anchor.textContent = button.text;
+                            buttonsDiv.appendChild(anchor);
+                        }
+                    });
+                    sectionDiv.appendChild(buttonsDiv);
+                }
+
+                container.appendChild(sectionDiv);
+            });
+        }
+
+        /**
+         * Opens the menu modal and loads the menu image and download button.
+         */
+        function openMenuModal() {
+            const menuModal = document.getElementById('menuModal');
+            const menuModalContentDiv = document.getElementById('menuModalContent');
+            const menuImageUrl = "https://i.postimg.cc/qvyj09qC/5d856e09-aa36-4656-97af-c72fb650af8c.jpg";
+
+            menuModalContentDiv.innerHTML = `
+                <img src="${menuImageUrl}" alt="${currentLang === 'ar' ? 'قائمة المطعم' : 'Restaurant Menu'}" class="modal-image">
+                <a href="${menuImageUrl}" download="restaurant_menu.jpg" class="modal-download-button">
+                    ${currentLang === 'ar' ? 'تحميل الصورة' : 'Download Image'}
+                </a>
+            `;
+            menuModal.style.display = 'flex';
+        }
+
+        /**
+         * Closes the menu modal.
+         */
+        function closeMenuModal() {
+            const menuModal = document.getElementById('menuModal');
+            menuModal.style.display = 'none';
+        }
+
+        /**
+         * Opens the spa modal and loads the spa images and contact information.
+         */
+        function openSpaModal() {
+            const spaModal = document.getElementById('spaModal');
+            const spaModalContentDiv = document.getElementById('spaModalContent');
+            const spaImage1Url = "https://i.postimg.cc/MTV9ZNdL/Capture.png";
+            const spaImage2Url = "https://i.postimg.cc/L5SNJDW8/Capture2.png";
+
+            spaModalContentDiv.innerHTML = `
+                <img src="${spaImage1Url}" alt="${currentLang === 'ar' ? 'صورة سبا 1' : 'Spa Image 1'}" class="modal-image">
+                <img src="${spaImage2Url}" alt="${currentLang === 'ar' ? 'صورة سبا 2' : 'Spa Image 2'}" class="modal-image">
+                <p class="instruction-section-content text-black font-semibold mt-4">Mobile: <a href="tel:+201031024347" class="text-blue-600 hover:underline">+2010 3102 4347</a></p>
+                <p class="instruction-section-content text-black font-semibold mb-4">WhatsApp: <a href="https://wa.me/201226264101" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">+2012 2626 4101</a></p>
+            `;
+            spaModal.style.display = 'flex';
+        }
+
+        /**
+         * Closes the spa modal.
+         */
+        function closeSpaModal() {
+            const spaModal = document.getElementById('spaModal');
+            spaModal.style.display = 'none';
+        }
+
+        /**
+         * Sets the current language of the page and re-renders the content.
+         * @param {string} lang - The language code ('ar' for Arabic, 'en' for English).
+         */
+        function setLanguage(lang) {
+            currentLang = lang;
+            // Update active button state
+            document.querySelectorAll('.language-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            renderContent();
+        }
+
+        // Initial render on page load (default to Arabic)
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('ar'); // Set Arabic as default on load
+        });
+    </script>
+</body>
+</html>
